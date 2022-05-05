@@ -1,0 +1,31 @@
+<div class="main-outer">
+  <h2>Save Customer Form</h2>
+  <br>
+  <br>
+  <form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input formControlName="name" type="text" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Address</mat-label>
+    <input  formControlName="address" type="text" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Salary</mat-label>
+    <input  formControlName="salary" type="number" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Avatar</mat-label>
+    <input  formControlName="avatar" type="text" matInput>
+  </mat-form-field>
+
+  <p style="text-align: right">
+    <button type="submit" mat-raised-button color="primary" [disabled] = "customerForm.invalid">Save Customer</button>
+  </p>
+  </form>
+</div>
+

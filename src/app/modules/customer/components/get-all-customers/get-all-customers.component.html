@@ -1,0 +1,20 @@
+<div class="main-outer">
+  <h2>Load All Customers</h2>
+  <br>
+  <br>
+
+  <form [formGroup]="searchForm">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Search</mat-label>
+      <input formControlName="search" type="search" matInput [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of dataArray" [value]="option.name">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+  </form>
+
+</div>
+

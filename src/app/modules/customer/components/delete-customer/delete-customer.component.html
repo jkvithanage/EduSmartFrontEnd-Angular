@@ -1,0 +1,44 @@
+<div class="main-outer">
+  <h2>Delete Customer Form</h2>
+  <br>
+  <br>
+
+  <form [formGroup]="searchForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input formControlName="search" type="search" matInput [matAutocomplete]="auto" (keyup.enter)="searchUniqueData()">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of dataArray" [value]="option.name">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+  </form>
+
+  <form [formGroup]="customerForm" (ngSubmit)="deleteCustomer()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address</mat-label>
+      <input  formControlName="address" type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Salary</mat-label>
+      <input  formControlName="salary" type="number" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Avatar</mat-label>
+      <input  formControlName="avatar" type="text" matInput>
+    </mat-form-field>
+
+    <p style="text-align: right">
+      <button type="submit" mat-raised-button color="primary" [disabled] = "customerForm.invalid">Delete Customer</button>
+    </p>
+  </form>
+</div>
+
